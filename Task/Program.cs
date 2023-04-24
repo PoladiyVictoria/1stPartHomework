@@ -14,10 +14,9 @@ void FillArray1(string[] arr, int arrSize)
 string[] CreateAndFillArray2(string[] arr, int arrSize1)
 {
     int sum = 0;
-    int length = 0;
     for (int i = 0; i < arrSize1; i++)
     {
-        length = arr[i].Length;
+        int length = arr[i].Length;
         if (length <= 3)
         {
             sum = sum + 1;
@@ -27,7 +26,7 @@ string[] CreateAndFillArray2(string[] arr, int arrSize1)
     int j = 0;
     for (int i = 0; i < arrSize1; i++)
     {
-        length = arr[i].Length;
+        int length = arr[i].Length;
         if (length <= 3)
         {
             arr2[j] = arr[i];
