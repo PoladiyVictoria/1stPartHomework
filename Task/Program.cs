@@ -11,12 +11,13 @@ void FillArray1(string[] arr, int arrSize)
     }
 }
 
-string[] CreateAndFillArray2(string[] arr1, int arrSize1)
+string[] CreateAndFillArray2(string[] arr, int arrSize1)
 {
     int sum = 0;
+    int length = 0;
     for (int i = 0; i < arrSize1; i++)
     {
-        int length = (arr1[i]).Length;
+        length = arr[i].Length;
         if (length <= 3)
         {
             sum = sum + 1;
@@ -26,10 +27,10 @@ string[] CreateAndFillArray2(string[] arr1, int arrSize1)
     int j = 0;
     for (int i = 0; i < arrSize1; i++)
     {
-        int length = (arr1[i]).Length;
+        length = arr[i].Length;
         if (length <= 3)
         {
-            arr2[j] = arr1[i];
+            arr2[j] = arr[i];
             j++;
         }
     }
@@ -39,19 +40,19 @@ string[] CreateAndFillArray2(string[] arr1, int arrSize1)
 void PrintArray(string[] arr)
 {
     Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < arr.Length - 1; i++)
     {
         Console.Write($"{arr[i]}, ");
     }
-    Console.WriteLine("]");
+    Console.WriteLine($"{arr[arr.Length - 1]}]");
 }
 
 
 Random R = new Random();
 int Size1 = R.Next(0, 10);
 string[] arrayLong = new string[Size1];
-string[] arrayShort = CreateAndFillArray2(arrayLong, Size1);
-
 FillArray1(arrayLong, Size1);
 PrintArray(arrayLong);
+
+string[] arrayShort = CreateAndFillArray2(arrayLong, Size1);
 PrintArray(arrayShort);
